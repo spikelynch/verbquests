@@ -1,11 +1,10 @@
-#!/usr/bin/env python3.5
-
 from nltk.corpus import wordnet as wn
 import random, sys, re
-from botclient import Bot
+from botclient.botclient import Bot
 
 # Synsets which are offensive but not flagged as such in the
 # WordNet definition
+
 SLUR_SS = [ 'native.n.01', 'aborigine.n.02' ] 
 
 
@@ -85,8 +84,8 @@ if __name__ == '__main__':
         q.dump_nouns()
         sys.exit(1)
     q.randomise()
-    tweet = q.render()
+    post = q.render()
     q.wait()
-    q.post(tweet)
-    print(tweet)
+    q.post(post)
+    print(post)
 
